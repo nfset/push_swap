@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   input_validation.c                                 :+:      :+:    :+:   */
+/*   input_validation2.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieniak <apieniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 17:29:17 by apieniak          #+#    #+#             */
-/*   Updated: 2025/05/24 22:41:33 by apieniak         ###   ########.fr       */
+/*   Updated: 2025/05/24 22:41:47 by apieniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ void	loop_arguments(int argc, char **argv)
 {
 	int	i;
 	int	flag;
-	int	params;
 
-	params = argc_checker(argc);
+	argc_checker(argc);
 	i = 1;
 	flag = 0;
-	while (!argv[i])
-		i++;
-	while (i <= argc - 1)
+	//while (!argv[i])
+		//i++;
+	printf("%s", argv[i]);
+	while (i <= argc)
 	{
 		flag = 1;
 		correct_chars(argv[i]);
@@ -35,7 +35,7 @@ void	loop_arguments(int argc, char **argv)
 
 
 
-void	correct_chars(char *str, int param)
+void	correct_chars(char *str)
 {
 	int	i;
 
@@ -45,14 +45,13 @@ void	correct_chars(char *str, int param)
 		return ;
 	while (str[i] != '\0')
 	{
-		if (str[i] == 32 && param != 0)
+		if (str[i] == 32)
 		{
 			i++;
 			continue ;
 		}
 		if (str[i] < '0' || str[i] > '9')
 			text_error("Invalid input, unknown 'number' character\n");
-		printf("%c", str[i]);
 		i++;
 	}
 }
@@ -63,21 +62,20 @@ void	text_error(char *error)
 	exit(1);
 }
 
-int	argc_checker(int argc)
+void	argc_checker(int argc)
 {
-	int	i;
-
-	i = 0;
-	if (argc > 2)
+	if (argc == 2)
 	{
-		i = 1;
 	}
-	else if (argc <= 1)
+	else if (argc > 2)
+	{
+	}
+	else
 	{
 		ft_printf("Not enough arguments\n");
 		exit(1);
 	}
-	return (i);
+
 }
 
 //void	join_arguments(char *arg)

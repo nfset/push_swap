@@ -6,7 +6,7 @@
 /*   By: apieniak <apieniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 17:11:02 by apieniak          #+#    #+#             */
-/*   Updated: 2025/05/18 20:28:46 by apieniak         ###   ########.fr       */
+/*   Updated: 2025/05/24 19:10:42 by apieniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,7 @@
 
 int	main(int argc, char **argv)
 {
-	int	i;
-
-	i = 2;
-	while (i >= argc)
-	{
-		correct_chars(argc, argv[i]);
-		i++;
-	}
+	loop_arguments(argc, argv);
 
 	printf("\nProgram stopped working properly");
 	return (0);
