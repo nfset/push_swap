@@ -1,9 +1,9 @@
-CC = cc
+CC = cc -Wall -Wextra -Werror
 
 EXEC = push_swap
 
 # Lista plików źródłowych
-SRC = main.c input_validation.c
+SRC = main.c parsing/input_valid_join.c parsing/validation_utils.c
 
 # Tworzenie NAZW plikow obiektowych (na podstawie plików .c)
 OBJ = $(SRC:.c=.o)

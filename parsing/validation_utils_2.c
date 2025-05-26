@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   validation_utils_2.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieniak <apieniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 17:11:02 by apieniak          #+#    #+#             */
-/*   Updated: 2025/05/26 20:02:04 by apieniak         ###   ########.fr       */
+/*   Created: 2025/05/26 20:36:42 by apieniak          #+#    #+#             */
+/*   Updated: 2025/05/26 20:47:45 by apieniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-int	main(int argc, char **argv)
+void	m_arg(int argc, char **argv, t_data *data)
 {
-	t_data	*data;
-
-	data = malloc(sizeof(t_data));
-	argc_checker(argc, argv, data);
-
-	printf("\nProgram stopped working properly");
-	return (0);
+	
 }
