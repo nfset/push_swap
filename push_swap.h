@@ -6,7 +6,7 @@
 /*   By: apieniak <apieniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 17:29:42 by apieniak          #+#    #+#             */
-/*   Updated: 2025/05/26 20:49:52 by apieniak         ###   ########.fr       */
+/*   Updated: 2025/05/28 17:01:48 by apieniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,14 @@ typedef struct s_data
 
 int		argc_checker(int argc, char **argv, t_data *data);
 char	*join_strings(int argc, char **argv);
-void	text_error(char *error);
+void	text_error(char *error, t_data *data);
 char	*single_space(const char *str);
 void	s_arg(char **argv, t_data *data);
 void	m_arg(int argc, char **argv, t_data *data);
 int		count_words(char *str);
-void	correct_chars(char *str);
+void	correct_chars(char *str, t_data *data);
+void	check_minus(char *str, int len, t_data *data);
+void	init_tabs(t_data *data, char *str);
+void	safe_exit(t_data *data);
 
 #endif
