@@ -6,7 +6,7 @@
 /*   By: apieniak <apieniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 20:36:42 by apieniak          #+#    #+#             */
-/*   Updated: 2025/05/28 17:11:15 by apieniak         ###   ########.fr       */
+/*   Updated: 2025/05/31 20:12:45 by apieniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	init_tabs(t_data *data, char *str)
 	}
 	free(ch_array);
 	free(str);
-	safe_exit(data);
 }
 
 void	m_arg(int argc, char **argv, t_data *data)
@@ -74,5 +73,7 @@ void	m_arg(int argc, char **argv, t_data *data)
 	data->size = count_words(str);
 	data->stack_a = ft_calloc(data->size + 1, sizeof(int));
 	data->stack_b = ft_calloc(data->size + 1, sizeof(int));
+	data->size_a = data->size;
+	data->size_b = 0;
 	init_tabs(data, str);
 }

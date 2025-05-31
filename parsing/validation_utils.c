@@ -6,7 +6,7 @@
 /*   By: apieniak <apieniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/18 20:22:47 by apieniak          #+#    #+#             */
-/*   Updated: 2025/05/28 17:11:20 by apieniak         ###   ########.fr       */
+/*   Updated: 2025/05/31 19:51:48 by apieniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ void	s_arg(char **argv, t_data *data)
 	//ft_printf("str:[X]%s[X]\nSize: %d", str, data->size);
 	data->stack_a = malloc(sizeof(int) * (data->size + 1));
 	data->stack_b = malloc(sizeof(int) * (data->size + 1));
+	data->size_a = data->size;
+	data->size_b = 0;
 	init_tabs(data, str);
 }

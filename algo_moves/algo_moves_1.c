@@ -6,7 +6,7 @@
 /*   By: apieniak <apieniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/28 17:12:07 by apieniak          #+#    #+#             */
-/*   Updated: 2025/05/29 18:40:58 by apieniak         ###   ########.fr       */
+/*   Updated: 2025/05/31 20:10:51 by apieniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	sa(t_data *data, int action)
 {
 	int	swap;
 
-	if (data->size <= 1)
+	if (data->size_a < 2)
 		return ;
 	swap = data->stack_a[0];
 	data->stack_a[0] = data->stack_a[1];
 	data->stack_a[1] = swap;
 	if (action == STYRTA_SIE_PALI)
-		printf("sa\n");
+		ft_printf("sa\n");
 }
 
 //sb (swap b): Swap the first 2 elements at the top of stack b.
@@ -35,7 +35,7 @@ void	sb(t_data *data, int action)
 {
 	int	swap;
 
-	if (data->size <= 1)
+	if (data->size_b < 2)
 		return ;
 	swap = data->stack_b[0];
 	data->stack_b[0] = data->stack_b[1];
@@ -46,12 +46,11 @@ void	sb(t_data *data, int action)
 
 //ss : sa and sb at the same time.
 
-void	ss(t_data *data, int action)
+void	ss(t_data *data)
 {
 	sa(data, SYNA_NIE_MA_W_DOMU);
 	sb(data, SYNA_NIE_MA_W_DOMU);
-	if (action == STYRTA_SIE_PALI)
-		printf("ss\n");
+	ft_printf("ss\n");
 }
 
 //pa (push a) Take the first element at the top of b and put it at the top of a
@@ -59,11 +58,27 @@ void	ss(t_data *data, int action)
 
 void	pa(t_data *data, int action)
 {
-	if (data->stack_b[0] == NULL)
+	int	i;
+
+	if (data->size_b == 0)
 		return ;
+	i = data->size_a;
+	while (i > 0)
+	{
+		data->stack_a[i] = data->stack_a[i - 1];
+		i--;
+	}
 	data->stack_a[0] = data->stack_b[0];
+	data->size_a++;
+	i = 0;
+	while (i < data->size_b - 1)
+	{
+		data->stack_b[i] = data->stack_b[i + 1];
+		i++;
+	}
+	data->size_b--;
 	if (action == STYRTA_SIE_PALI)
-		printf("pa\n");
+		ft_printf("pa\n");
 }
 
 //pb (push b) Take the first element at the top of a and put it at the top of b
@@ -71,9 +86,25 @@ void	pa(t_data *data, int action)
 
 void	pb(t_data *data, int action)
 {
-	if (data->stack_a[0] == NULL)
+	int	i;
+
+	if (data->size_a == 0)
 		return ;
-	data->stack_b[0] = data->stack_b[0];
+	i = data->size_b;
+	while (i > 0)
+	{
+		data->stack_b[i] = data->stack_b[i - 1];
+		i--;
+	}
+	data->stack_b[0] = data->stack_a[0];
+	data->size_b++;
+	i = 0;
+	while (i < data->size_b - 1)
+	{
+		data->stack_a[i] = data->stack_a[i + 1];
+		i++;
+	}
+	data->size_a--;
 	if (action == STYRTA_SIE_PALI)
-		printf("pb\n");
+		ft_printf("pb\n");
 }

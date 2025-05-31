@@ -6,7 +6,7 @@
 /*   By: apieniak <apieniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/29 14:01:38 by apieniak          #+#    #+#             */
-/*   Updated: 2025/05/29 18:30:44 by apieniak         ###   ########.fr       */
+/*   Updated: 2025/05/31 19:54:26 by apieniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ void	ra(t_data *data, int action)
 	int	first;
 	int	i;
 
-	if (data->size < 2)
+	if (data->size_a < 2)
 		return ;
 	first = data->stack_a[0];
 	i = 0;
-	while (i < data->size - 1)
+	while (i < data->size_a - 1)
 	{
 		data->stack_a[i] = data->stack_a[i + 1];
 		i++;
 	}
-	data->stack_a[data->size - 1] = first;
+	data->stack_a[data->size_a - 1] = first;
 
 	if (action == STYRTA_SIE_PALI)
 		ft_printf("ra\n");
@@ -43,16 +43,16 @@ void	rb(t_data *data, int action)
 	int	first;
 	int	i;
 
-	if (data->size < 2)
+	if (data->size_b < 2)
 		return ;
 	first = data->stack_b[0];
 	i = 0;
-	while (i < data->size - 1)
+	while (i < data->size_b - 1)
 	{
 		data->stack_b[i] = data->stack_b[i + 1];
 		i++;
 	}
-	data->stack_b[data->size - 1] = first;
+	data->stack_b[data->size_b - 1] = first;
 	if (action == STYRTA_SIE_PALI)
 		ft_printf("rb\n");
 }
@@ -61,7 +61,9 @@ void	rb(t_data *data, int action)
 
 void	rr(t_data *data)
 {
-
+	ra(data, SYNA_NIE_MA_W_DOMU);
+	rb(data, SYNA_NIE_MA_W_DOMU);
+	ft_printf("rr\n");
 }
 
 

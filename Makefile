@@ -3,7 +3,8 @@ CC = cc -Wall -Wextra -Werror
 EXEC = push_swap
 
 # Lista plików źródłowych
-SRC = main.c parsing/input_valid_join.c parsing/validation_utils.c parsing/validation_utils_2.c
+SRC = main.c parsing/input_valid_join.c parsing/validation_utils.c parsing/validation_utils_2.c \
+algo_moves/algo_moves_1.c algo_moves/algo_moves_2.c algo_moves/algo_moves_3.c algo_moves/algo_moves_utils.c
 
 # Tworzenie NAZW plikow obiektowych (na podstawie plików .c)
 OBJ = $(SRC:.c=.o)
