@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   turk_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: apieniak <apieniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/18 17:11:02 by apieniak          #+#    #+#             */
-/*   Updated: 2025/06/04 16:17:20 by apieniak         ###   ########.fr       */
+/*   Created: 2025/06/04 15:31:01 by apieniak          #+#    #+#             */
+/*   Updated: 2025/06/04 16:23:29 by apieniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
-
-
-int	main(int argc, char **argv)
+void	start_turk(t_data *data)
 {
-	t_data	*data;
-
-	data = ft_calloc(1, sizeof(t_data));
-	if (!data)
-		exit(1);
-	argc_checker(argc, argv, data);
-	if (has_duplicates(data))
+	if (data->size_a == 2)
 	{
-		ft_printf("Array has duplicates\n");
-		safe_exit(data);
+		ra(data, STYRTA_SIE_PALI);
+		return ;
 	}
-	if (is_sorted(data))
-		safe_exit(data);
-	start_turk(data);
-	safe_exit(data);
-	printf("\nProgram stopped working properly\n");
-	return (0);
+	pb(data, STYRTA_SIE_PALI);
+	pb(data, STYRTA_SIE_PALI);
 }

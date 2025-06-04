@@ -6,7 +6,7 @@
 /*   By: apieniak <apieniak@student.42warsaw.pl>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 20:36:42 by apieniak          #+#    #+#             */
-/*   Updated: 2025/05/31 20:12:45 by apieniak         ###   ########.fr       */
+/*   Updated: 2025/06/04 15:39:39 by apieniak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	init_tabs(t_data *data, char *str)
 	i = 0;
 	while (i < data->size)
 	{
-		printf("%d\n", data->stack_a[i]);
 		free(ch_array[i]);
 		i++;
 	}
